@@ -1,0 +1,6 @@
+FROM hoyosjs/grading_helper
+MAINTAINER EllisBrown
+WORKDIR /app/data/
+ADD ./vunet .
+EXPOSE 8080
+CMD /bin/bash ./grade.sh
