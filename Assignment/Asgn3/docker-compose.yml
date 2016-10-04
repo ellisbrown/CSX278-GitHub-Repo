@@ -1,13 +1,15 @@
 version: '2'
 services:
-    jhipster:
-      image: ellisbrown/jhipster-project
-      ports:
-        - "8080:8080"
+  jhipster:
+    image: ellisbrown/jhipster-project:latest
+    ports:
+     - "8080:8080"
+    volumes:
+     - .:/usr/src/app
 
-    grading_helper:
-      image: ellisbrown/grading_helper
-      stdin_open: true
-      tty: true
-      depends_on:
-        - jhipster
+  grading_helper:
+    image: ellisbrown/grading_helper:latest
+    stdin_open: true
+    tty: true
+    depends_on:
+     - jhipster
